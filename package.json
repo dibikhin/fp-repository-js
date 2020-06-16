@@ -1,15 +1,21 @@
 {
   "name": "fp-repository-js",
   "version": "1.0.0",
-  "description": "",
+  "description": "Example of the Repository pattern in functional style",
   "main": "index.js",
   "scripts": {
     "test": "mocha repository.spec.js",
     "lint": "eslint ."
   },
-  "keywords": [],
-  "author": "Roman Dibikhin",
-  "license": "ISC",
+  "keywords": [
+    "functional-programming",
+    "javascript",
+    "application-architecture",
+    "repository-pattern",
+    "nodejs"
+  ],
+  "author": "Roman Dibikhin <dibikhin@gmail.com> (https://github.com/dibikhin)",
+  "license": "MIT",
   "dependencies": {
     "ramda": "^0.27.0"
   },
