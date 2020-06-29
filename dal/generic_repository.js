@@ -12,12 +12,12 @@ async function find(db, collectionName, query) {
     return db.collection(collectionName).find(query)
 }
 
-async function getById(db, collectionName, docId) {
-    return db.get(collectionName, docId)
-}
-
 async function create(db, collectionName, diff) {
     return db.add(collectionName, diff)
+}
+
+async function getById(db, collectionName, docId) {
+    return db.get(collectionName, docId)
 }
 
 async function setById(db, collectionName, docId, diff) {
@@ -34,8 +34,8 @@ async function deleteById(db, collectionName, docId) {
 
 module.exports = Object.freeze({
     find,
-    getById,
     create,
+    getById,
     setById,
     updateById,
     deleteById,

@@ -4,7 +4,8 @@
 
 'use strict'
 
-// The only and explicit global state
+// The only and explicit global state.
+// To be used for context initialization only.
 const globalState = {}
 
 // WARN: use lowercased filenames only for singleton

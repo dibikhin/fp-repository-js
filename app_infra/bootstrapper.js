@@ -15,17 +15,16 @@ const {
 const { make: makeUsersRepo, } = require('../dal/users_repository_factory')
 const { make: makeContext, } = require('./context_factory')
 
-// Explicit global state
-const globalState = require('./global_state')
-
 /**
  * Build context from parts, cascade initialization
  */
-function initCtx() {
+function init({ globalState, }) {
+    // eslint-disable-next-line no-param-reassign
     globalState.db = lazyInit({
         initTarget: dbStub.init,
         target: globalState.db,
     })
+    // eslint-disable-next-line no-param-reassign
     globalState.usersRepo = lazyInit({
         initTarget: () => initUsersRepo({ db: globalState.db, }),
         target: globalState.usersRepo,
@@ -48,5 +47,5 @@ function initUsersRepo({ db, }) {
 }
 
 module.exports = Object.freeze({
-    initCtx,
+    init,
 })
