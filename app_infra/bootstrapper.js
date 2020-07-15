@@ -30,12 +30,14 @@ function init({ globalState, }) {
         target: globalState.UsersRepository,
     })
 
+    Object.freeze(globalState)
+
     const ctx = makeContext({
         dal: {
             UsersRepository: globalState.UsersRepository,
         },
     })
-    return ctx
+    return Object.freeze(ctx)
 }
 
 function initUsersRepo({ db, }) {

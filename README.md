@@ -30,7 +30,7 @@ $ npm test
 
 ## Usage
 
-The concrete `UsersRepository` module is initiated in `app_infra/bootstrapper` by `users_repository_factory` using `generic_repository` and `dal/db_stub`. Dependencies are injected with partial application (Ramda's `partial`) which also handles state (`db`) through reference to `app_infra/global_state` (explicit state storage).
+The concrete `UsersRepository` module is initiated in `app_infra/bootstrapper` by `dal/users_repository_factory` using `dal/generic_repository` and `dal/db_stub`. Dependencies are injected with partial application (Ramda's `partial`) which also handles state (`db`) through reference to `app_infra/global_state` (explicit state storage).
 
 See a simple example of usage in `test.js` and how to run above.
 
