@@ -4,34 +4,37 @@
 
 'use strict'
 
+/**
+ * @param {Object} ctx context
+ */
 async function runTests({
     Dal: {
-        UsersRepo,
+        UsersRepository,
     },
 }) {
-    const gotUser = await UsersRepo.getById('1234')
+    const gotUser = await UsersRepository.getById('1234')
     console.log('gotUser:', gotUser)
 
-    const createdUser = await UsersRepo.create({ name: 'Jane', })
+    const createdUser = await UsersRepository.create({ name: 'Jane', })
     console.log('createdUser:', createdUser)
 
-    const createdByIdUser = await UsersRepo.setById(
+    const createdByIdUser = await UsersRepository.setById(
         '2345', { name: 'Peter', },
     )
     console.log('createdByIdUser:', createdByIdUser)
 
-    const updatedUser = await UsersRepo.updateById(
+    const updatedUser = await UsersRepository.updateById(
         '2345', { age: 21, },
     )
     console.log('updatedUser:', updatedUser)
 
-    const deletedUser = await UsersRepo.deleteById('1234')
+    const deletedUser = await UsersRepository.deleteById('1234')
     console.log('deletedUser:', deletedUser)
 
     const query = {
         field: 'age', op: 'gt', value: 27,
     }
-    const foundUser = await UsersRepo.find(query)
+    const foundUser = await UsersRepository.find(query)
     console.log('foundUser:', foundUser)
 
     return null

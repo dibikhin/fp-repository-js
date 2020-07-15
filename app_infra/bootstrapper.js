@@ -25,14 +25,14 @@ function init({ globalState, }) {
         target: globalState.db,
     })
     // eslint-disable-next-line no-param-reassign
-    globalState.usersRepo = lazyInit({
+    globalState.UsersRepository = lazyInit({
         initTarget: () => initUsersRepo({ db: globalState.db, }),
-        target: globalState.usersRepo,
+        target: globalState.UsersRepository,
     })
 
     const ctx = makeContext({
         dal: {
-            UsersRepo: globalState.usersRepo,
+            UsersRepository: globalState.UsersRepository,
         },
     })
     return ctx

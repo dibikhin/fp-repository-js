@@ -12,10 +12,10 @@ const globalState = require('./app_infra/global_state')
 
 describe('The Repository pattern, FP style', () => {
     it('should show results without errors', () => {
-        const ctx = initCtx({ globalState, })
+        const globalCtx = initCtx({ globalState, })
 
         // Trivial Dependency Injection
-        runTests(ctx)
+        runTests(globalCtx)
             .then()
             .catch(console.error)
     })

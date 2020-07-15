@@ -1,15 +1,23 @@
-// /**
-//  * Entry point example
-//  */
+/**
+ * Entry point example
+ */
 
-// 'use strict'
+'use strict'
 
-// const { initCtx, } = require('./app_infra/bootstrapper')
-// const { runTests, } = require('./tests')
+const { init: initCtx, } = require('./app_infra/bootstrapper')
 
-// const ctx = initCtx()
+// Explicit global state
+const globalState = require('./app_infra/global_state')
 
-// // Trivial Dependency Injection
-// runTests(ctx)
-//     .then()
-//     .catch(console.error)
+const globalCtx = initCtx({ globalState, })
+
+// Trivial Dependency Injection
+getUser(globalCtx)
+    .then()
+    .catch(console.error)
+
+async function getUser(ctx) {
+    const gotUser = await ctx.Dal.UsersRepository.getById('1234')
+    console.log('gotUser:', gotUser)
+    return null
+}
