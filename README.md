@@ -55,7 +55,6 @@ Please make sure to update tests as appropriate.
 ## Acknowledgments
 Thanks to:
 - Martin Fowler for the Patterns of Enterprise Application Architecture book
-- Airbnb for their JavaScript style guide
 - Buzz de Cafe and Scott Sauyet for the Ramda library
 
 ## Links
@@ -63,6 +62,8 @@ Thanks to:
 - [Ramda](https://ramdajs.com) — A practical functional library for JavaScript programmers
 - [Mocha](https://mochajs.org) — A feature-rich JavaScript test framework 
 - [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+- [An OOP Repository](https://khalilstemmler.com/articles/typescript-domain-driven-design/repository-dto-mapper/#Repositories) — An OOP example of the Repository pattern
+- [F# for fun and profit](https://fsharpforfunandprofit.com) — An inspiring and addictive blog about Functional Programming
 
 ## License
 [MIT](LICENSE)
